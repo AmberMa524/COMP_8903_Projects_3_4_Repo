@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class Drag : MonoBehaviour
 {
@@ -8,12 +9,15 @@ public class Drag : MonoBehaviour
 	// Velocity Exponent: ----- (velocityExponent)
 	// Define a public float variable for velocityExponent: 
 	//NOTE: This value cannot be more than 2, so define a range first.
-	
+
+	public float velocityExponent;
+
 
 	/* -------------------- PART 3 ------------------------------------*/
 	// Drag constant: ----- (dragConstant)
 	// Define a public float for dragConstant:
-	
+
+	public float dragConstant;
 
 	private PhysicsEngine physicsEngine;
 
@@ -28,13 +32,13 @@ public class Drag : MonoBehaviour
 	void FixedUpdate()
 	{
 		// Define Vector 3 for the velocityVector from the physicsEngine:
-		
+		Vector3 velocityVector = physicsEngine.velocityVector;
 
 		// Find the magnitude of the velocityVector:
-		
+		float magnitude = (float) Math.Sqrt(Math.Pow(velocityVector.x, 2) + Math.Pow(velocityVector.y, 2) + Math.Pow(velocityVector.z, 2));
 
 		// Call the fundtion CalculateDrag to find the magnitude of the drag force:
-		
+		float magOfDragForce = CalculateDrag(magnitude);
 
 		//Normalizing and find the dragVector
 		// Comment out the line below:
