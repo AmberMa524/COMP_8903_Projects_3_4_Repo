@@ -35,17 +35,17 @@ public class Drag : MonoBehaviour
 		Vector3 velocityVector = physicsEngine.velocityVector;
 
 		// Find the magnitude of the velocityVector:
-		float magnitude = (float) Math.Sqrt(Math.Pow(velocityVector.x, 2) + Math.Pow(velocityVector.y, 2) + Math.Pow(velocityVector.z, 2));
+		float magnitude = Mathf.Sqrt(Mathf.Pow(velocityVector.x, 2) + Mathf.Pow(velocityVector.y, 2) + Mathf.Pow(velocityVector.z, 2));
 
 		// Call the fundtion CalculateDrag to find the magnitude of the drag force:
 		float magOfDragForce = CalculateDrag(magnitude);
 
 		//Normalizing and find the dragVector
 		// Comment out the line below:
-		//Vector3 dragVector = dragSize * -velocityVector.normalized;
+		Vector3 dragVector = magOfDragForce * -velocityVector.normalized;
 
 		/// Add the force to the list of the forces on physicsEngine;
-		
+		physicsEngine.AddForce(dragVector);
 	}
 
 
@@ -55,6 +55,6 @@ public class Drag : MonoBehaviour
 	// Use Mathf.Pow
 	float CalculateDrag(float speed)
 	{
-		return speed;
+		return dragConstant * Mathf.Pow(speed, velocityExponent);
 	}
 }
