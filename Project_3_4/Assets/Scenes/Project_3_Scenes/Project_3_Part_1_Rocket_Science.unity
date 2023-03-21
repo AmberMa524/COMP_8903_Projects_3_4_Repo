@@ -312,6 +312,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 5166635916945788755, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
+      propertyPath: thrustPercent
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166635916945788755, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
+      propertyPath: thrustUnitVector.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5166635916945788782, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
       propertyPath: m_RootOrder
       value: 2

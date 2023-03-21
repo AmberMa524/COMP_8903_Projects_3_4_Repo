@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 93109485}
   - component: {fileID: 93109484}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Comet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,9 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78971b3a56931dc47b20e4b28eb703af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelMass: 500
-  maxThrust: 1638
-  thrustPercent: 0.85
+  fuelMass: 10000
+  maxThrust: 2000
+  thrustPercent: 1
   thrustUnitVector: {x: -1, y: -1, z: 0}
 --- !u!114 &93109485
 MonoBehaviour:
@@ -310,12 +310,24 @@ PrefabInstance:
       value: Rocket2
       objectReference: {fileID: 0}
     - target: {fileID: 5166635916945788755, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
+      propertyPath: fuelMass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166635916945788755, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166635916945788755, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
+      propertyPath: thrustPercent
+      value: 0.511
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166635916945788755, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
+      propertyPath: thrustUnitVector.x
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5166635916945788755, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
       propertyPath: thrustUnitVector.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5166635916945788780, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -475,6 +487,10 @@ PrefabInstance:
     - target: {fileID: 5166635916945788755, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166635916945788755, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
+      propertyPath: thrustPercent
+      value: 0.126
       objectReference: {fileID: 0}
     - target: {fileID: 5166635916945788755, guid: c0d5f71d5e841574fb032ce86ee8b13f, type: 3}
       propertyPath: thrustUnitVector.y
