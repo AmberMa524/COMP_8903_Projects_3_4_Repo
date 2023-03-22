@@ -31,13 +31,13 @@ public class UniversalGravitation : MonoBehaviour
 		{
 			foreach (PhysicsEngine ObjectB in physicsEngineArray)
 			{
-				if (ObjectA != ObjectB) {
-					Vector3 r = ObjectB.velocityVector - ObjectA.velocityVector;
-					Vector3 rsquared = new Vector3(Mathf.Pow(2, r.x), Mathf.Pow(2, r.y), Mathf.Pow(2, r.z));
+				if (ObjectA != ObjectB && ObjectA != this) {
+					Vector3 offset = ObjectB.transform.position - ObjectA.transform.position;
+					float r = offset.magnitude;
+					float rsquared = Mathf.Pow(r, 2);
 					float massproduct = gc*ObjectA.mass*ObjectB.mass;
-					Vector3 gravityMagnitude = new Vector3(massproduct/rsquared.x, massproduct/rsquared.y, massproduct/rsquared.z);
-					//Vector3 gravityFeltVector = gravityMagnitude * offset.normalized;
-					Vector3 gravityFeltVector = gravityMagnitude.normalized;
+					float gravityMagnitude = massproduct / rsquared;
+					Vector3 gravityFeltVector = gravityMagnitude * offset.normalized;
 					ObjectA.AddForce(gravityFeltVector);
 				}
 			}
